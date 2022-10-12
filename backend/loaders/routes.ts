@@ -1,7 +1,6 @@
 import { Express, Router } from "express"
 import userRoute from "../modules/user/user.route"
 import { API_PREFIX } from "../server.config"
-
 interface Route {
 	path: string
 	route: Router

@@ -4,6 +4,7 @@ import cors from "cors"
 import express from "express"
 import helmet from "helmet"
 import DB from "./loaders/db"
+import SetupDocs from "./loaders/docs.setup"
 import ApiRoutes from "./loaders/routes"
 import { corsOptions } from "./server.config"
 const app = express()
@@ -16,8 +17,9 @@ app.use(cors(corsOptions))
 app.use(express.json())
 app.use(cookieParser())
 
-// load Api Routes
+// load Api Routes and Docs
 ApiRoutes(app)
+SetupDocs(app)
 
 // handle 404 error
 app.use("*", (req, res, next) => {
