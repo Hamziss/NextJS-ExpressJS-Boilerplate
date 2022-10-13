@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const API_URL = process.env.API_URL as string
+const API_URL = process.env.API_URL! || "http://localhost:5000/api/v1"
 
 const isLoggedIn = async () => {
 	const response = await axios({
