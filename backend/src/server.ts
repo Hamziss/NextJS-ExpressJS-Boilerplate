@@ -21,6 +21,11 @@ app.use(cookieParser())
 ApiRoutes(app)
 SetupDocs(app)
 
+// test route
+app.get("/ping", (req, res) => {
+	res.send("pong")
+})
+
 // handle 404 error
 app.use("*", (req, res, next) => {
 	res.status(404).json({ message: "Resource not found." })
