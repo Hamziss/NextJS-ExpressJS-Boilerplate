@@ -22,6 +22,10 @@ app.use((0, cookie_parser_1.default)());
 // load Api Routes and Docs
 (0, routes_1.default)(app);
 (0, docs_setup_1.default)(app);
+// test route
+app.get("/ping", (req, res) => {
+    res.send("pong");
+});
 // handle 404 error
 app.use("*", (req, res, next) => {
     res.status(404).json({ message: "Resource not found." });
